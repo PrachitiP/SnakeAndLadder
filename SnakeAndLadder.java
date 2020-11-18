@@ -1,18 +1,49 @@
 package BridgeLabz.SnakeAndLadder;
 
 public class SnakeAndLadder {
-	
-	public static int startPos = 0;
-	public static int player = 1;
+
+	public static int playerPos = 0;
 	public static int winningPoints = 100;
 
+	public static int rollDice() {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		System.out.println("Snake And Ladder");
 		int roll = (int)Math.floor(Math.random()*10)%6+1;
-
-		System.out.println("Dies value is: "+roll);
+		return roll;
 	}
 
+	public static int checkOption() {
+
+		return (int) Math.floor(Math.random()*10)%3 +1;
+	}
+
+	public static void main(String[] args) {
+
+		int value = rollDice();
+		int option = checkOption();
+
+		switch(option) {
+
+			case 1:
+				System.out.println("There are no play!!!");
+				break;
+			case 2:
+				System.out.println("You got a ladder");
+				playerPos += value;
+				System.out.println("current position is:"+playerPos);
+				break;
+			case 3:
+				System.out.println("You got a snake");
+				playerPos -= value;
+				if(playerPos<0){
+
+					playerPos = 0;
+				}
+				System.out.println("current position is:"+playerPos);
+				break;
+
+		}
+	}
 }
+	
+
+
