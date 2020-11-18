@@ -1,5 +1,6 @@
 package BridgeLabz.SnakeAndLadder;
 
+
 public class SnakeAndLadder {
 
 	public static int playerPos = 0;		//player starting position
@@ -31,6 +32,11 @@ public class SnakeAndLadder {
 				case 2:
 					System.out.println("You got a ladder");		//ladder if choose 2
 					playerPos += value;				//add dice value to the player position
+					
+					if(playerPos > winningPoints) {			//checking winning condition
+
+						playerPos -= value;
+					}
 					System.out.println("current position is:"+playerPos);
 					break;
 				case 3:
@@ -49,4 +55,3 @@ public class SnakeAndLadder {
 		}
 	}
 }
-
