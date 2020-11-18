@@ -10,6 +10,9 @@ public class SnakeAndLadder {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		System.out.println("Snake And Ladder");
+		int roll = (int)Math.floor(Math.random()*10)%6+1;
+
+		System.out.println("Dies value is: "+roll);
 	}
 
 }
